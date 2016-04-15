@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Product;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -23,4 +24,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
