@@ -18,7 +18,7 @@ class ProductsControllerTest extends TestCase
         }
     }
 
-    public function testStoreCreateAProduct()
+    public function testStoreCreatesAProduct()
     {
         $user = factory(App\User::class)->create();
         $this->actingAs($user);
@@ -32,7 +32,7 @@ class ProductsControllerTest extends TestCase
             ->seeJson(['name' => 'Produto', 'price' => 10]);
     }
 
-    public function testShowReturnsASpecificProduct()
+    public function testShowReturnsAnSpecificProduct()
     {
         $product = factory(App\Product::class)->create();
 
